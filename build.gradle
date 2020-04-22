@@ -21,5 +21,9 @@ dependencies {
 //[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
     compileJava.options.encoding = 'UTF-8'
     compile group: 'org.controlsfx', name: 'controlsfx', version: '8.20.8'
+    implementation 'org.json:json:20190722'
+
+
+
 
 }
