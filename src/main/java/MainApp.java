@@ -59,17 +59,6 @@ public class MainApp extends Application {
 
     public static void main(String args[]) throws ScriptException, FileNotFoundException {
 
-        String token = "cno9s8zo41";// 네아로 접근 토큰 값";
-        String header = "Bearer " + token; // Bearer 다음에 공백 추가
-        try {
-
-
-
-
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
 
 
         launch();
@@ -79,8 +68,8 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        final String url = "jdbc:mysql://(host=tortue.ml,port=3306,serverTimezone=UTC,allowMultiQueries=TRUE)/mydb?useUnicode=true&characterEncoding=utf8";
-
+        final String url = "jdbc:mysql://(host=djh20.iptime.org,port=3306,serverTimezone=UTC,allowMultiQueries=TRUE)/mydb?useUnicode=true&characterEncoding=utf8";
+        Vector<Place> selected = new Vector<Place>();
 
         final String dbID = "djh20";
         final String dbPW = "dldd0525!@";
@@ -296,6 +285,7 @@ public class MainApp extends Application {
             public void handle(ActionEvent actionEvent) {
 
                 Place target = (Place) actionEvent.getTarget();
+                selected.add(target);
                 System.out.println(target.placeName);
                 javaConnector.reqMarkerSelect(target.placeName);
             }
@@ -429,35 +419,46 @@ public class MainApp extends Application {
         load.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Vector<Place> selected = new Vector<Place>();
-                Vector<Edge> edges = new Vector<Edge>();
-                for(int i = 0 ; i < placeResults.size() ; i++){
-                    Place place = placeResults.get(i);
-                    if(place.isSelected() == true) {
-                        selected.add(place);
-                        edges.add(new Edge(place.placeName, place.lat, place.longit));
-                    }
-                }
 
-//                for(int i = 0 ; i < selected.size() ; i++){
-//                    if(i+1 < selected.size()){
-//                        NaviInfo result = RouteNavigation.getRoute(selected.get(i).longit+","+selected.get(i).lat, selected.get(i+1).longit+","+selected.get(i+1).lat);
-//                        for(int j = 0 ; j < result.points.size() ;j++){
-//                            Point point = result.points.get(j);
-//                            javaConnector.reqAddPath(point.longit, point.lat);
-//                            System.out.println(j);
-//                        }
-//                    }
-//                }
+                Vector<Edge> edges = new Vector<Edge>();
+                Vector<Vertax> vertaxes = new Vector<Vertax>();
+                for(int i = 0 ; i < selected.size() ; i++){
+                    Place place = selected.get(i);
+                        edges.add(new Edge(place));
+                }
 
                 for(int i = 0; i < edges.size() ; i++){
                     for (int j = 0 ; j <edges.size() ; j++){
                         if(i>j){
+                            System.out.println("vertax 추가!");
                             Edge edge1 = edges.get(i);
                             Edge edge2 = edges.get(j);
-                            NaviInfo result = RouteNavigation.getRoute(edges.get(i).lng+","+edges.get(i).lat, edges.get(j).lng+","+edges.get(j).lat);
-                            Vertax vertax= new Vertax(edge1,edge2, result.distance);
+                            NaviInfo result = RouteNavigation.getRoute(edges.get(i).place.longit+","+edges.get(i).place.lat, edges.get(j).place.longit+","+edges.get(j).place.lat);
+                            Vertax vertax1 = new Vertax(edge1,edge2,result.distance, result.points);
+                            Vertax vertax2 = new Vertax(edge2,edge1, result.distance,result.points);
+                            edge1.addVertax(vertax1);
+                            edge2.addVertax(vertax2);
+                            vertaxes.add(vertax1);
+                            vertaxes.add(vertax2);
+
                         }
+                    }
+                }
+                Vector<Edge> path = RouteNavigation.getShortestPath(edges,0);
+                for(int i = 0 ; i < path.size() ; i++){
+
+                    System.out.println(path.get(i).place.placeName +"123");
+                }
+                for(int i = 0 ; i < path.size()-1 ; i++){
+                    for(int j = 0 ; j < vertaxes.size() ; j++){
+                        Vertax vertax = vertaxes.get(j);
+                        if(vertax.start == path.get(i) && vertax.target == path.get(i+1)){
+                            System.out.println("출발지 : " + vertax.start.place.placeName + " 도착지 : " + vertax.target.place.placeName);
+                            for(int z = 0 ; z  < vertax.points.size() ; z++) {
+                                javaConnector.reqAddPath(vertax.points.get(z).longit, vertax.points.get(z).lat);
+                            }
+                        }
+                        javaConnector.reqDrawLoad();
                     }
                 }
 
@@ -465,7 +466,6 @@ public class MainApp extends Application {
 
 
 
-                javaConnector.reqDrawLoad();
 
             }
         });
@@ -487,7 +487,7 @@ public class MainApp extends Application {
                 javascriptConnector = (JSObject) webEngine.executeScript("getJsConnector()");
             }
         });
-        webEngine.load("http://tortue.ml/comunicationTest.html");
+        webEngine.load("http://djh20.iptime.org/comunicationTest.html");
 
         primaryStage.show();
     }
@@ -576,8 +576,6 @@ public class MainApp extends Application {
         }
 
         public void reqAddPath(double longit, double lat) {
-            System.out.println("웹에 요청");
-            System.out.println(longit + " " + lat);
             javascriptConnector.call("addPath", longit, lat);
         }
     }

@@ -1,15 +1,13 @@
 import java.util.Vector;
 
 public class Edge {
-    String placeName;
-    double lat;
-    double lng;
-    Vector<Vertax> vertaxes;
 
-    public Edge(String placeName, double lat, double lng) {
-        this.placeName = placeName;
-        this.lat = lat;
-        this.lng = lng;
+    Place place;
+    Vector<Vertax> vertaxes= new Vector<Vertax>();
+
+
+    public Edge(Place place) {
+        this.place = place;
     }
 
     public void addVertax(Vertax vertax){
