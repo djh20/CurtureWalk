@@ -1,0 +1,235 @@
+@font-face {
+    src: url('yanolza.ttf');
+}
+.search{
+    -fx-background-image: url("images/search.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 21px;
+    -fx-background-color: transparent;
+    -fx-min-width: 21px;
+    -fx-min-height: 21px;
+}
+.search:hover{
+    -fx-background-size: 20px;
+    -fx-cursor: hand;
+}
+
+.reset{
+    -fx-background-image: url("images/reset.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 21px;
+    -fx-background-color: transparent;
+    -fx-min-width: 21px;
+    -fx-min-height: 21px;
+}
+.reset:hover{
+    -fx-background-size: 20px;
+    -fx-cursor: hand;
+}
+.info{
+     -fx-background-image: url("images/info.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 20px;
+    -fx-background-color: transparent;
+    -fx-padding: 0 20px 0 0;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+ }
+.info:hover{
+    -fx-background-size: 19px;
+    -fx-cursor: hand;
+}
+.gps{
+    -fx-background-image: url("images/gps.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 20px;
+    -fx-background-color: transparent;
+    -fx-padding: 0 20px 0 0;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+}
+.gps:hover{
+    -fx-background-size: 19px;
+    -fx-cursor: hand;
+}
+
+.up{
+    -fx-background-image: url("images/up.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 15px;
+    -fx-background-color: transparent;
+    -fx-padding: 0 15px 0 0;
+}
+.up:hover{
+    -fx-background-size: 14px;
+    -fx-cursor: hand;
+}
+
+.down{
+    -fx-background-image: url("images/down.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 15px;
+    -fx-background-color: transparent;
+    -fx-padding: 0 15px 0 0;
+}
+
+.down:hover{
+    -fx-background-size: 14px;
+    -fx-cursor: hand;
+}
+
+.listItem{
+    -fx-padding: 0 20 0 20;
+}
+.placeLabel{
+    -fx-font-size: 20px;
+    -fx-padding: 0 10px 0 5px;
+}
+.searchView{
+    -fx-background-radius: 10;
+    -fx-background-color: #c4c4c4;
+}
+.mainView{
+    -fx-background-color: white;
+    -fx-padding: 10 10 10 10;
+}
+
+
+.placeListVIew{
+    -fx-padding: 10 10 10 10;
+    -fx-background-color: #c4c4c4;
+}
+
+.placeListLabelBox{
+    -fx-background-radius: 5;
+    -fx-background-color: white;
+    -fx-padding: 0 10 0 10;
+}
+
+.itemBox{
+    -fx-background-color: white;
+    -fx-padding: 5 0 5 0;
+    -fx-background-radius: 10;
+    -fx-font-size: 17px;
+}
+
+Label{
+    -fx-font-family: "Yanolja Yache R";
+}
+
+Button{
+    -fx-font-family: "Yanolja Yache R";
+    -fx-font-size: 12;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #c4c4c4;
+}
+
+.startGoalView{
+    -fx-padding: 0 10 0 10;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+
+.walk {
+    -fx-background-image: url("images/walk.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 50px;
+    -fx-background-color: transparent;
+    -fx-background-position: center center;
+    -fx-min-width: 150px;
+    -fx-min-height: 50px;
+}
+
+.car {
+    -fx-background-image: url("images/car.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 50px;
+    -fx-background-color: transparent;
+    -fx-background-position: center center;
+    -fx-min-width: 150px;
+    -fx-min-height: 50px;
+}
+
+.publicTransport {
+    -fx-background-image: url("images/bus.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 50px;
+    -fx-background-color: transparent;
+    -fx-background-position: center center;
+    -fx-min-width: 150px;
+    -fx-min-height: 50px;
+}
+
+.paperPlane {
+    -fx-background-image: url("images/paperplane.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 30px;
+    -fx-background-color: transparent;
+    -fx-background-position: center center;
+    -fx-min-width: 60px;
+    -fx-min-height: 30px;
+}
+
+.seperator {
+    -fx-background-color: black;
+}
