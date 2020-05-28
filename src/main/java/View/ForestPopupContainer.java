@@ -1,5 +1,6 @@
 package View;
 
+import MetaData.GuiSizeMetaData;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,8 +13,8 @@ public class ForestPopupContainer extends BorderPane {
 
     private GridPane info;
     private Label title;
-    private Label Column[] = new Label[4];
-    private Label contents[] = new Label[4];
+    private Label Column[] = new Label[6];
+    private Label contents[] = new Label[6];
 
     ForestPopupContainer(){
         info = new GridPane();
@@ -25,16 +26,20 @@ public class ForestPopupContainer extends BorderPane {
         vbox.getChildren().add(title);
         vbox.setAlignment(Pos.CENTER);
         info.setMinSize(300,300);
-        Column[0] = new Label("전화번호");
-        Column[1] = new Label("주소");
-        Column[2] = new Label("입장료");
-        Column[3] = new Label("홈페이지");
+        Column[0] = new Label("전화번호");//phoneNum
+        Column[1] = new Label("주소");//address
+        Column[2] = new Label("입장료");//entrancePrice
+        Column[3] = new Label("홈페이지");//siteUrl
+        Column[4] = new Label("숙박시설유무");//canStay
+        Column[5] = new Label("보유시설물");//facility
         //전송받은 객체 내용 넣기
         contents[0] = new Label("0000");
         contents[1] = new Label("xx시");
         contents[2] = new Label("0원");
         contents[3] = new Label("www");
-        for(int i=0; i<4; i++){
+        contents[4] = new Label("Y");
+        contents[5] = new Label("숲속의집, 오토캠핑장, 야영장, 카라반");
+        for(int i=0; i<6; i++){
             Column[i].setStyle("-fx-font-size: 24; -fx-font-weight: bold;");
             Column[i].setMaxWidth(Double.MAX_VALUE);
             Column[i].setAlignment(Pos.CENTER);
@@ -48,11 +53,9 @@ public class ForestPopupContainer extends BorderPane {
         info.setAlignment(Pos.CENTER);
         info.getColumnConstraints().add(new ColumnConstraints(130));
         info.getColumnConstraints().add(new ColumnConstraints(130));
-        Button a = new Button("지도");
-        a.setMinWidth(300);
-        a.setMinHeight(300);
+
         this.setTop(vbox);
-        this.setCenter(info);
-        this.setBottom(a);
+        this.setRight(info);
+        this.setLeft(new MapView(GuiSizeMetaData.MAPVIEW_WIDTH/4*3, GuiSizeMetaData.MAPVIEW_HEIGHT/4*3));
     }
 }

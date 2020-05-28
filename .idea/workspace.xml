@@ -71,6 +71,7 @@
       <workItem from="1590058537485" duration="10000" />
       <workItem from="1590134253697" duration="9322000" />
       <workItem from="1590173017764" duration="238000" />
+      <workItem from="1590642312244" duration="2316000" />
     </task>
     <servers />
   </component>
@@ -86,29 +87,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590156440423" />
-    <state x="567" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589785885466">
+    <state x="751" y="347" width="417" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590643043510">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="567" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589785885466" />
-    <state width="1860" height="281" key="GridCell.Tab.0.bottom" timestamp="1590165956799">
+    <state x="751" y="347" width="417" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1590643043510" />
+    <state x="567" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590642732969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590165956799" />
-    <state width="1860" height="281" key="GridCell.Tab.0.center" timestamp="1590165956799">
+    <state x="567" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590642732969" />
+    <state width="1860" height="281" key="GridCell.Tab.0.bottom" timestamp="1590644629619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590165956799" />
-    <state width="1860" height="281" key="GridCell.Tab.0.left" timestamp="1590165956799">
+    <state width="1860" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590644629619" />
+    <state width="1860" height="281" key="GridCell.Tab.0.center" timestamp="1590644629618">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590165956799" />
-    <state width="1860" height="281" key="GridCell.Tab.0.right" timestamp="1590165956799">
+    <state width="1860" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590644629618" />
+    <state width="1860" height="281" key="GridCell.Tab.0.left" timestamp="1590644629618">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590165956799" />
-    <state x="745" y="351" key="com.intellij.ide.util.TipDialog" timestamp="1590173017865">
+    <state width="1860" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590644629618" />
+    <state width="1860" height="281" key="GridCell.Tab.0.right" timestamp="1590644629619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="745" y="351" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590173017865" />
+    <state width="1860" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590644629619" />
+    <state x="745" y="351" key="com.intellij.ide.util.TipDialog" timestamp="1590642321526">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="745" y="351" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590642321526" />
   </component>
 </project>
