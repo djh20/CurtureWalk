@@ -74,7 +74,7 @@ public class PlaceListItemFragment extends BorderPane {
                 ParkPopupContainer parkPopupContainer = new ParkPopupContainer();
 
                 pop.getContent().add(concerthallPopupContainer); //조건에 따라 종류별 팝업컨테이너 넣기
-                pop.getContent().get(0).setStyle("-fx-background-radius: 10; -fx-background-color: #c4c4c4;");
+                pop.getContent().get(0).getStyleClass().add("popupMain");
                 pop.show(stage);
             }
         });

@@ -45,7 +45,7 @@ public class PathResultContainer extends BorderPane {
         contents.setMinSize(GuiSizeMetaData.MAPVIEW_WIDTH,GuiSizeMetaData.MAPVIEW_HEIGHT);
         contents.setAlignment(Pos.CENTER);
         GridPane predictData = new GridPane();
-        predictData.setMinSize(GuiSizeMetaData.MAPVIEW_WIDTH,GuiSizeMetaData.MAPVIEW_HEIGHT/7);
+        predictData.setMinHeight(GuiSizeMetaData.MAPVIEW_HEIGHT/7);
         predictData.setAlignment(Pos.CENTER);
 
         Label indexTime = new Label("소요시간");
@@ -70,7 +70,6 @@ public class PathResultContainer extends BorderPane {
 
         GridPane passingPlaceList = new GridPane();
         passingPlaceList.setAlignment(Pos.CENTER);
-        predictData.setGridLinesVisible(true);
 
         Label startIndex = new Label("출발지");
         settingLabel(startIndex);
@@ -118,7 +117,7 @@ public class PathResultContainer extends BorderPane {
         contentsbottom.setMinSize(GuiSizeMetaData.MAPVIEW_WIDTH-10,30);
         this.save = new Button("저장");
         this.save.setMinSize(100,25);
-        this.save.setStyle("-fx-font-size: 20;");
+        this.save.getStyleClass().add("popupButton");
         contentsbottom.getChildren().add(this.save);
         contentsbottom.setAlignment(Pos.CENTER);
         contents.getChildren().addAll(buttonbox,seperator,predictData,sequence,passingPane,contentsbottom);

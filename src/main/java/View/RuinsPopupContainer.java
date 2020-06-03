@@ -4,29 +4,28 @@ import MetaData.GuiSizeMetaData;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 
 public class RuinsPopupContainer extends BorderPane {
 
 
-    private GridPane info;
+    private HBox totalBox = new HBox();
+    private VBox attribute = new VBox();
+    private VBox contentBox = new VBox();
     private Label title;
     private Label Column[] = new Label[5];
     private Label contents[] = new Label[5];
 
     RuinsPopupContainer(){
-        info = new GridPane();
+
         title = new Label("전송받을 시설명(유적)");
-        title.setStyle("-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;");
+        title.getStyleClass().add("popupTitle");
         VBox vbox = new VBox();
-        vbox.setStyle("-fx-background-color: black; -fx-background-radius: 10");
+        vbox.getStyleClass().add("popupTitleBar");
         vbox.setMinWidth(300);
         vbox.getChildren().add(title);
         vbox.setAlignment(Pos.CENTER);
-        info.setMinSize(300,300);
+
         Column[0] = new Label("전화번호");//phoneNum
         Column[1] = new Label("주소");//address
         Column[2] = new Label("유적분류");//ruinsType
@@ -40,25 +39,27 @@ public class RuinsPopupContainer extends BorderPane {
         contents[4] = new Label("이것은 \n 문화유적 \n 입니다");
         //소개 내용 넣을 때 점 단위로 스플릿해서 사이에 "\n" 넣어주기
         for(int i=0; i<5; i++){
-            Column[i].setStyle("-fx-font-size: 24; -fx-font-weight: bold;");
+            Column[i].getStyleClass().add("popuplabel");
             Column[i].setMaxWidth(Double.MAX_VALUE);
             Column[i].setAlignment(Pos.CENTER);
-            contents[i].setStyle("-fx-font-size: 24; -fx-font-weight: bold;");
+            contents[i].getStyleClass().add("popuplabel");
             contents[i].setMaxWidth(Double.MAX_VALUE);
             contents[i].setAlignment(Pos.CENTER);
         }
         contents[4].setStyle("-fx-font-size: 14;");
-        info.setGridLinesVisible(true);
-        info.addColumn(0,Column);
-        info.addColumn(1,contents);
-        info.setAlignment(Pos.CENTER);
-        info.getColumnConstraints().add(new ColumnConstraints(130));
-        info.getColumnConstraints().add(new ColumnConstraints(130));
-        Button a = new Button("지도");
-        a.setMinWidth(300);
-        a.setMinHeight(300);
+        attribute.setMinSize(150,300);
+        attribute.getStyleClass().add("popupVBox");
+        attribute.getChildren().addAll(Column);
+        attribute.setAlignment(Pos.CENTER);
+        contentBox.setMinSize(150,300);
+        contentBox.getChildren().addAll(contents);
+        contentBox.setAlignment(Pos.CENTER);
+        contentBox.getStyleClass().add("popupVBox");
+        totalBox.getChildren().addAll(attribute,contentBox);
+        totalBox.setAlignment(Pos.CENTER);
+
         this.setTop(vbox);
-        this.setRight(info);
-        this.setLeft(new MapView(GuiSizeMetaData.MAPVIEW_WIDTH/4*3, GuiSizeMetaData.MAPVIEW_HEIGHT/4*3));
+        this.setLeft(totalBox);
+        this.setRight(new MapView(GuiSizeMetaData.MAPVIEW_WIDTH/4*3, GuiSizeMetaData.MAPVIEW_HEIGHT/4*3));
     }
 }

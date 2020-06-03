@@ -54,7 +54,7 @@ public class StartGoalView extends VBox {
                 Stage stage = (Stage)searchPath.getScene().getWindow();
                 PathResultContainer pathResultContainer = new PathResultContainer(5);
                 pop.getContent().add(pathResultContainer);
-                pop.getContent().get(0).setStyle("-fx-background-radius: 10; -fx-background-color: #c4c4c4;");
+                pop.getContent().get(0).getStyleClass().add("popupMain");
                 pop.show(stage);
             }
         });

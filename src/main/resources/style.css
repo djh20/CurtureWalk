@@ -87,27 +87,27 @@
 }
 .searchView{
     -fx-background-radius: 10;
-    -fx-background-color: #c4c4c4;
+    -fx-background-color: #F5F6CE;
 }
 .mainView{
-    -fx-background-color: white;
+    -fx-background-color: #FBFBEF;
     -fx-padding: 10 10 10 10;
 }
 
 
 .placeListVIew{
     -fx-padding: 10 10 10 10;
-    -fx-background-color: #c4c4c4;
+    -fx-background-color: #F5F6CE;
 }
 
 .placeListLabelBox{
     -fx-background-radius: 5;
-    -fx-background-color: white;
+    -fx-background-color: #FBFBEF;
     -fx-padding: 0 10 0 10;
 }
 
 .itemBox{
-    -fx-background-color: white;
+    -fx-background-color: #FBFBEF;
     -fx-padding: 5 0 5 0;
     -fx-background-radius: 10;
     -fx-font-size: 17px;
@@ -123,7 +123,7 @@ Button{
 }
 
 .scroll-pane > .viewport {
-    -fx-background-color: #c4c4c4;
+    -fx-background-color: #F7F8E0;
 }
 
 .startGoalView{
@@ -140,7 +140,7 @@ Button{
 
 
 .table-view .column-header-background{
-    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+    -fx-background-color: linear-gradient(#131313 0%, #0B3861 100%);
 }
 
 .table-view .column-header-background .label{
@@ -233,3 +233,41 @@ Button{
 .seperator {
     -fx-background-color: black;
 }
+
+.seperator-darkblue{
+    -fx-background-color: #38424B;
+}
+
+.popupButton {
+    -fx-background-color: #FACC2E;
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: #0B3861;
+    -fx-font-size: 24px;
+    -fx-padding: 10 20 10 20;
+}
+
+.popuplabel {
+    -fx-font-size: 24; -fx-font-weight: bold;-fx-padding: 10px;
+
+}
+
+.popupVBox {
+    -fx-border-width: 3;
+    -fx-border-color: #F5ECCE;
+    -fx-background-color: #FBFBEF;
+}
+
+.popupMain {
+    -fx-background-radius: 10; -fx-background-color: #F7F8E0;
+}
+
+.popupTitle {
+    -fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #0B3861;
+}
+
+.popupTitleBar {
+    -fx-background-color: #FACC2E;
+}
+
