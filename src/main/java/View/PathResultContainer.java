@@ -25,13 +25,17 @@ public class PathResultContainer extends BorderPane {
     private Label passingPlace[];
     private Button save;
 
+    private HBox totalBox = new HBox();
+    private VBox indexBox = new VBox();
+    private VBox placelist = new VBox();
+
     PathResultContainer(int passingPlaceCount){
         this.car = new Button();
         this.publicTransport = new Button();
         this.walk = new Button();
 
-        passingPlace = new Label[passingPlaceCount];
-        passingPlaceIndex = new Label[passingPlaceCount];
+        passingPlace = new Label[passingPlaceCount+2];
+        passingPlaceIndex = new Label[passingPlaceCount+2];
 
         car.getStyleClass().add("car");
         publicTransport.getStyleClass().add("publicTransport");
@@ -68,40 +72,60 @@ public class PathResultContainer extends BorderPane {
         predictData.getColumnConstraints().add(new ColumnConstraints(130));
         predictData.getColumnConstraints().add(new ColumnConstraints(130));
 
-        GridPane passingPlaceList = new GridPane();
-        passingPlaceList.setAlignment(Pos.CENTER);
+
 
         Label startIndex = new Label("출발지");
         settingLabel(startIndex);
         this.startPlace = new Label("출발지데이터");
         settingLabel(this.startPlace);
-        passingPlaceList.add(startIndex,0,0);
-        passingPlaceList.add(this.startPlace,1,0);
-        for(int i=0; i<passingPlaceCount; i++){
-            this.passingPlaceIndex[i] = new Label(Integer.toString(i));
-            settingLabel(this.passingPlaceIndex[i]);
-            this.passingPlace[i] = new Label("경유지 "+Integer.toString(i));
-            settingLabel(this.passingPlace[i]);
-            passingPlaceList.add(this.passingPlaceIndex[i],0,i+1);
-            passingPlaceList.add(this.passingPlace[i],1,i+1);
-        }
+        passingPlaceIndex[0] = startIndex;
+        passingPlace[0] = startPlace;
+
         Label endIndex = new Label("도착지");
         settingLabel(endIndex);
         this.endPlace = new Label("도착지데이터");
         settingLabel(this.endPlace);
-        passingPlaceList.add(endIndex,0,passingPlaceCount+1);
-        passingPlaceList.add(endPlace,1,passingPlaceCount+1);
-        passingPlaceList.getColumnConstraints().add(new ColumnConstraints(130));
-        passingPlaceList.getColumnConstraints().add(new ColumnConstraints(130));
-        passingPlaceList.setMinWidth(GuiSizeMetaData.MAPVIEW_WIDTH-10);
-        ScrollPane passingPane = new ScrollPane();
-        passingPlaceList.setGridLinesVisible(true);
-        passingPane.setContent(passingPlaceList);
-        passingPane.setMinSize(GuiSizeMetaData.MAPVIEW_WIDTH-10,GuiSizeMetaData.MAPVIEW_HEIGHT/2);
+        passingPlaceIndex[passingPlaceCount+1] = endIndex;
+        passingPlace[passingPlaceCount+1] = endPlace;
 
-        HBox seperator = new HBox();
-        seperator.getStyleClass().add("seperator");
-        seperator.setMinSize(GuiSizeMetaData.MAPVIEW_WIDTH+5,3);
+
+        for(int i=1; i<=passingPlaceCount; i++){
+            this.passingPlaceIndex[i] = new Label(Integer.toString(i));
+            settingLabel(this.passingPlaceIndex[i]);
+            this.passingPlace[i] = new Label("경유지 "+Integer.toString(i));
+            settingLabel(this.passingPlace[i]);
+        }
+
+
+
+        indexBox.getChildren().addAll(passingPlaceIndex);
+        placelist.getChildren().addAll(passingPlace);
+        indexBox.setMinWidth((GuiSizeMetaData.MAPVIEW_WIDTH-25)/2);
+        indexBox.getStyleClass().add("popupVBox");
+        indexBox.setAlignment(Pos.CENTER);
+        placelist.setMinWidth((GuiSizeMetaData.MAPVIEW_WIDTH-25)/2);
+        placelist.setAlignment(Pos.CENTER);
+        placelist.getStyleClass().add("popupVBox");
+        totalBox.getChildren().addAll(indexBox,placelist);
+        totalBox.setAlignment(Pos.CENTER);
+        totalBox.setMaxWidth(GuiSizeMetaData.MAPVIEW_WIDTH-25);
+
+
+        ScrollPane passingPane = new ScrollPane();
+        passingPane.getStyleClass().add("passingPane");
+        passingPane.setContent(totalBox);
+        passingPane.setMinSize(GuiSizeMetaData.MAPVIEW_WIDTH-10,GuiSizeMetaData.MAPVIEW_HEIGHT/2);
+        passingPane.setMaxSize(GuiSizeMetaData.MAPVIEW_WIDTH-10,GuiSizeMetaData.MAPVIEW_HEIGHT/2);
+        passingPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        passingPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
+        HBox seperator[] = new HBox[2];
+
+        for(int i=0; i<2; i++){
+            seperator[i] = new HBox();
+            seperator[i].getStyleClass().add("seperator");
+            seperator[i].setMinSize(GuiSizeMetaData.MAPVIEW_WIDTH+5,3);
+        }
 
         HBox sequence = new HBox();
         sequence.setMinSize(GuiSizeMetaData.MAPVIEW_WIDTH,50);
@@ -120,15 +144,15 @@ public class PathResultContainer extends BorderPane {
         this.save.getStyleClass().add("popupButton");
         contentsbottom.getChildren().add(this.save);
         contentsbottom.setAlignment(Pos.CENTER);
-        contents.getChildren().addAll(buttonbox,seperator,predictData,sequence,passingPane,contentsbottom);
-        contents.setMargin(sequence,new Insets(0,0,20,0));
+        contentsbottom.setPadding(new Insets(20,0,10,0));
+        contents.getChildren().addAll(buttonbox,seperator[0],predictData,seperator[1],sequence,passingPane,contentsbottom);
         this.setRight(contents);
         this.setLeft(new MapView(GuiSizeMetaData.MAPVIEW_WIDTH, GuiSizeMetaData.MAPVIEW_HEIGHT));
     }
 
     private void settingLabel(Label label){
         label.setMaxWidth(Double.MAX_VALUE);
-        label.setStyle("-fx-font-size: 30;");
+        label.setStyle("-fx-font-size: 24; -fx-text-fill: black; -fx-padding: 10");
         label.setAlignment(Pos.CENTER);
     }
 }

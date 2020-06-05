@@ -14,7 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -52,7 +51,7 @@ public class StartGoalView extends VBox {
                 Popup pop = new Popup();
                 pop.setAutoHide(true);
                 Stage stage = (Stage)searchPath.getScene().getWindow();
-                PathResultContainer pathResultContainer = new PathResultContainer(5);
+                PathResultContainer pathResultContainer = new PathResultContainer(20);
                 pop.getContent().add(pathResultContainer);
                 pop.getContent().get(0).getStyleClass().add("popupMain");
                 pop.show(stage);
@@ -78,7 +77,6 @@ public class StartGoalView extends VBox {
         getChildren().addAll(buttonBox, startBox, goalBox, searchPath);
     }
 }
-
 
 
 class ToggleSwitch extends Parent {

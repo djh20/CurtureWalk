@@ -1,6 +1,5 @@
 package Controller;
 
-import Model.Place;
 import javafx.concurrent.Worker;
 import javafx.scene.control.Alert;
 import javafx.scene.web.WebEngine;

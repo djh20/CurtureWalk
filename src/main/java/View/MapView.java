@@ -1,7 +1,6 @@
 package View;
 
 import Controller.MapManager;
-import MetaData.GuiSizeMetaData;
 import javafx.scene.layout.Pane;
 import javafx.scene.web.WebView;
 

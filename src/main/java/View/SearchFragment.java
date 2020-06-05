@@ -1,14 +1,11 @@
 package View;
 
 import MetaData.GuiSizeMetaData;
-import com.sun.java.accessibility.util.GUIInitializedListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 
 public class SearchFragment extends BorderPane {
     private AutoCompleteTextField autoCompleteTextField;

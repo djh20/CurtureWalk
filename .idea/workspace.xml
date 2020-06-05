@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1bd3272-93d8-4d24-bb50-ad7cad073504" name="Default Changelist" comment="" />
+    <list default="true" id="6984147b-0422-43b5-ae21-4e82a20c9d84" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1cWZQRzJJodgMObk2dzSNM8dTY0" />
+  <component name="ProjectId" id="1ctEaiBO5c4j42as9p10BvwQtcm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -20,23 +18,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\swj95\Documents\GitHub\Curture_walk\Curture_walk_java8.0\src\main\resources" />
-      <recent name="C:\Users\swj95\Documents\GitHub\Curture_walk\Curture_walk_java8.0\src\main\java" />
-    </key>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Curture_walk_java8.0.main" />
+      <module name="Culture_walk_son.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -52,13 +42,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d1bd3272-93d8-4d24-bb50-ad7cad073504" name="Default Changelist" comment="" />
-      <created>1590646293312</created>
+      <changelist id="6984147b-0422-43b5-ae21-4e82a20c9d84" name="Default Changelist" comment="" />
+      <created>1591339555176</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1590646293312</updated>
-      <workItem from="1590646296183" duration="1539000" />
-      <workItem from="1591188310565" duration="7120000" />
+      <updated>1591339555176</updated>
+      <workItem from="1591339558481" duration="57000" />
     </task>
     <servers />
   </component>
@@ -66,37 +55,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Project_Structure" timestamp="1590646430694">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1591339683918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1590646430694" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1590646697107">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591339683918" />
+    <state x="652" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1591339630005">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590646697107" />
-    <state x="396" y="221" key="FileChooserDialogImpl" timestamp="1590646358337">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="396" y="221" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590646358337" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591195435591">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591195435591" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591195435591">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591195435591" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591195435591">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591195435591" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591195435591">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591195435591" />
-    <state x="652" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1591188310603">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="652" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591188310603" />
+    <state x="652" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591339630005" />
   </component>
 </project>
