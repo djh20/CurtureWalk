@@ -1,3 +1,14 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.openjfx:javafx-plugin:0.0.8"
+    }
+}
+
 plugins {
     id 'java'
     id 'org.openjfx.javafxplugin' version '0.0.8'
@@ -9,21 +20,33 @@ javafx {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+//sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
+
+apply plugin: "org.openjfx.javafxplugin"
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19' //
-//[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
     compileJava.options.encoding = 'UTF-8'
-    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.20.8'
-    implementation 'org.json:json:20190722'
+    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.12'
+    compile files('lib/javafx-plugin-0.0.8 (1).jar')
+}
 
+jar {
+    from {
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
 
-
-
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
 }

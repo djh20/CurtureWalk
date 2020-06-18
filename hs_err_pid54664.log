@@ -1,0 +1,32 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_STACK_OVERFLOW (0xc00000fd) at pc=0x00007ffaa8ef6508, pid=54664, tid=23320
+#
+# JRE version: OpenJDK Runtime Environment (11.0.6+8) (build 11.0.6+8-b520.43)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.6+8-b520.43, mixed mode, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [jfxwebkit.dll+0x1466508]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Duser.country=KR -Duser.language=ko -Duser.variant Main
+
+Host: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 18362 (10.0.18362.778)
+Time: Sat Jun  6 00:06:46 2020 ¢¥eCN©öI¡¾©ö C¡ÍA¨ª¨öA elapsed time: 7 seconds (0d 0h 0m 7s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000160c76ba800):  JavaThread "JavaFX Application Thread" [_thread_in_native, id=23320, stack(0x000000554cc00000,0x000000554cd00000)]
+
+Stack: [0x000000554cc00000,0x000000554cd00000],  sp=0x000000554cc01e08,  free space=7k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [jfxwebkit.dll+0x1466508]
